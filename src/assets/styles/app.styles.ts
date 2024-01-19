@@ -1,38 +1,44 @@
-import styled, {keyframes} from 'styled-components'
+import styled from 'styled-components';
 
-export const SApp = styled.div`
-  text-align: center;
-`
+export const Title = styled.h2`
+    font-size: 40px;
+    font-weight: 500;
+    text-align: center;
+`;
 
-export const SHeader = styled.header`
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-`
+export const TimerContainer = styled.div`
+    text-align: center;
+    font-size: 40px;
+`;
 
-const spin = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-`
+export const ButtonsContainer = styled.div`
+    text-align: center;
+    margin-top: 25px;
+`;
 
-export const SLogo = styled.img`
-  height: 40vmin;
-  pointer-events: none;
+export const Button = styled.button`
+    && {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        border: 2px solid #000;
+        border-radius: 5px;
+        background-color: transparent;
+        transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        margin-right: 15px;
 
-  @media (prefers-reduced-motion: no-preference) {
-    animation: ${spin} infinite 20s linear;
-  }
-`
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.2); /* Затемнение при наведении */
+            border-color: #3498db;
+        }
 
-export const SLink = styled.a`
-  color: #61dafb;
-`
+        &:active {
+            border-color: #2980b9;
+            background-color: #2980b9;
+            color: #fff;
+        }
+    }
+`;
